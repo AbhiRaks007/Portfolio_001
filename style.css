@@ -435,118 +435,102 @@ body.light-mode .hero-title, body.light-mode .card-glass h2, body.light-mode .pr
   color: #fff;
   transform: scale(1.07);
 }
-/* Responsive Navigation */
-@media (max-width: 800px) {
-  .nav-glass {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem 1.2rem;
-    border-radius: 0 0 1rem 1rem;
-  }
-  .nav-logo {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-  }
-  .nav-menu {
-    flex-direction: column;
-    gap: 0.7rem;
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-  .mode-toggle {
-    align-self: flex-end;
-    margin: 0.5rem 0 0 0;
-  }
+/* DARK THEME (default) */
+.stunning-nav {
+  background: linear-gradient(90deg, rgba(31,38,135,0.85) 0%, rgba(127,90,240,0.85) 100%);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
 }
-@media (max-width: 600px) {
-  .hero-glass, .card-glass, .footer-glass {
-    max-width: 98vw;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-  .hero-title {
-    font-size: 1.2rem;
-  }
-  .profile-pic-anim {
-    width: 80px;
-    height: 80px;
-  }
-  .profile-pic-img {
-    width: 68px;
-    height: 68px;
-  }
-  .hero-btn, .resume-btn, .contact-form button {
-    font-size: 0.95rem;
-    padding: 0.5rem 1.2rem;
-  }
-  .projects-list {
-    gap: 0.7rem;
-  }
-  .project-item {
-    padding: 0.7rem 0.5rem;
-    font-size: 0.98rem;
-  }
-  .contact-form {
-    max-width: 98vw;
-  }
+.gradient-logo {
+  background: linear-gradient(90deg, #7f5af0 30%, #00eaff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
-/* Smoother UI and button effects */
-.nav-menu a, .hero-btn, .resume-btn, .contact-form button {
-  border: none;
-  outline: none;
-  box-shadow: 0 2px 8px #00eaff22;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+.nav-link {
+  color: #fff;
 }
-.nav-menu a:active, .hero-btn:active, .resume-btn:active, .contact-form button:active {
-  transform: scale(0.97);
-  box-shadow: 0 1px 4px #7f5af033;
+.nav-link.active,
+.nav-link:hover {
+  color: #00eaff;
 }
-.card-glass, .hero-glass {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 600px;
-  box-sizing: border-box;
+.nav-link::after {
+  background: linear-gradient(90deg, #7f5af0 30%, #00eaff 100%);
 }
-.projects-list {
-  width: 100%;
+.stunning-toggle {
+  background: rgba(0,234,255,0.12);
+  color: #fff;
 }
-.profile-pic-outer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1003;
-  transition: background 0.2s;
+.stunning-toggle:hover {
+  background: rgba(127,90,240,0.18);
 }
 .hamburger .bar {
-  width: 26px;
-  height: 3px;
   background: #fff;
-  margin: 4px 0;
-  border-radius: 2px;
-  transition: 0.3s;
 }
-.hamburger.is-active .bar:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+.hamburger {
+  background: rgba(127,90,240,0.10);
+  border-radius: 50%;
 }
-.hamburger.is-active .bar:nth-child(2) {
-  opacity: 0;
+.nav-menu {
+  background: linear-gradient(120deg, #1e215d 80%, #7f5af0 100%);
+  box-shadow: 8px 0 32px 0 rgba(31, 38, 135, 0.37);
 }
-.hamburger.is-active .bar:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+
+/* LIGHT THEME */
+body.light-mode .stunning-nav {
+  background: linear-gradient(90deg, #fff 0%, #e0e7ff 100%);
+  box-shadow: 0 8px 32px 0 rgba(127,90,240,0.10);
 }
+body.light-mode .gradient-logo {
+  background: linear-gradient(90deg, #7f5af0 30%, #1e215d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+body.light-mode .nav-link {
+  color: #1e215d;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+body.light-mode .nav-link.active,
+body.light-mode .nav-link:hover {
+  color: #7f5af0;
+}
+body.light-mode .nav-link::after {
+  background: linear-gradient(90deg, #7f5af0 30%, #1e215d 100%);
+}
+body.light-mode .stunning-toggle {
+  background: rgba(127,90,240,0.10);
+  color: #7f5af0;
+  box-shadow: 0 2px 8px 0 rgba(127,90,240,0.08);
+}
+body.light-mode .stunning-toggle:hover {
+  background: rgba(127,90,240,0.18);
+}
+body.light-mode .hamburger {
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px 0 rgba(127,90,240,0.18), 0 0 0 4px #7f5af033;
+  border: 2px solid #7f5af0;
+  outline: 3px solid #00eaff;
+  outline-offset: 2px;
+  transition: background 0.2s, box-shadow 0.2s, outline 0.2s;
+}
+body.light-mode .hamburger:hover, body.light-mode .hamburger.is-active {
+  background: #e0e7ff;
+  box-shadow: 0 8px 32px 0 #7f5af055, 0 0 0 6px #00eaff44;
+  outline: 3px solid #7f5af0;
+}
+body.light-mode .hamburger .bar {
+  background: #7f5af0;
+  box-shadow: 0 2px 8px 0 #7f5af055;
+}
+body.light-mode .nav-menu {
+  background: linear-gradient(120deg, #fff 80%, #e0e7ff 100%);
+  box-shadow: 8px 0 32px 0 #7f5af033;
+}
+
 @media (max-width: 900px) {
   .nav-menu {
     position: fixed;
@@ -600,15 +584,33 @@ body.light-mode .nav-menu {
   background: linear-gradient(120deg, #fff 80%, #e0e7ff 100%);
   box-shadow: 8px 0 32px 0 #7f5af033;
 }
-body.light-mode .nav-link {
-  color: #1e215d;
-  font-weight: 600;
-  letter-spacing: 1px;
+
+@media (max-width: 900px) {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    flex-direction: column;
+    background: linear-gradient(120deg, #1e215d 80%, #7f5af0 100%);
+    width: 70vw;
+    height: 100vh;
+    padding-top: 5rem;
+    gap: 2.5rem;
+    align-items: flex-start;
+    z-index: 1001;
+    transition: left 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
+    margin: 0;
+    opacity: 0.98;
+    box-shadow: 8px 0 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 0 18px 18px 0;
+  }
+  body.light-mode .nav-menu {
+    background: linear-gradient(120deg, #fff 80%, #e0e7ff 100%);
+    box-shadow: 8px 0 32px 0 #7f5af033;
+  }
+  body.light-mode .nav-link {
+    color: #1e215d;
+  }
 }
-body.light-mode .nav-link.active,
-body.light-mode .nav-link:hover {
-  color: #7f5af0;
-}
-body.light-mode .nav-link::after {
-  background: linear-gradient(90deg, #7f5af0 30%, #1e215d 100%);
-}
+
+/* ...existing code... */
