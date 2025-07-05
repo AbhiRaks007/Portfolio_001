@@ -53,3 +53,39 @@ if (contactForm) {
     alert('Message sent!');
   });
 }
+
+// Hamburger menu functionality and smooth scroll for nav links
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  // Hamburger toggle
+  hamburger.addEventListener('click', function () {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+    navMenu.classList.toggle('nav-menu-active');
+    hamburger.classList.toggle('is-active');
+  });
+
+  // Close menu on link click (mobile)
+  navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      navMenu.classList.remove('nav-menu-active');
+      hamburger.classList.remove('is-active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Smooth scroll for nav links
+  navLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href').slice(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        e.preventDefault();
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+});

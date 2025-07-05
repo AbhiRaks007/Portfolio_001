@@ -387,6 +387,76 @@ body.light-mode .hero-title, body.light-mode .card-glass h2, body.light-mode .pr
     max-width: 98vw;
   }
 }
+
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1002;
+}
+.hamburger .bar {
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.hamburger.is-active .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-active .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Responsive nav */
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  transition: right 0.3s;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    flex-direction: column;
+    background: rgba(30,33,93,0.95);
+    width: 70vw;
+    height: 100vh;
+    padding-top: 5rem;
+    gap: 2rem;
+    align-items: flex-start;
+    z-index: 1001;
+    transition: right 0.3s;
+  }
+  .nav-menu.nav-menu-active {
+    right: 0;
+  }
+  .nav-glass {
+    justify-content: space-between;
+  }
+}
+
+/* Smooth scroll behavior for html */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Smoother UI and button effects */
 .nav-menu a, .hero-btn, .resume-btn, .contact-form button {
   border: none;
